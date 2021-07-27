@@ -1,0 +1,11 @@
+.blockClass {
+    display: inline-block;
+}
+
+div label {
+    display: block;
+}
+
+.space{
+    margin-right:3pc
+}

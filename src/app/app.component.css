@@ -1,0 +1,14 @@
+div.class1{
+    position: absolute;
+    right: 1px;
+    width: 400px;
+    height: 550px;
+    border: 1px solid black;
+  } 
+
+
+.dashboard{
+    position: absolute;
+    left: 100px;
+
+}

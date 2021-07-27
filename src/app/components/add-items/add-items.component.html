@@ -1,0 +1,41 @@
+<form [formGroup]="productForm">
+
+    <div formArrayName="selling_points">
+      <div class="form-row" *ngFor="let item of sellingPoints.controls; let pointIndex=index" [formGroupName]="pointIndex">
+        <div class="form-group col-sm-3 blockClass">
+            <label>First Name</label>
+            <input  class="space" formControlName="firstName" />
+        </div>
+        <div class="form-group col-sm-3 blockClass">
+            <label>Last Name</label>
+            <input  class="space" formControlName="lastName" />
+        </div>
+        <div class="form-group col-sm-3 blockClass">
+            <label>Contact No </label>
+            <input  (keypress)="numberOnly($event)" class="space" formControlName="contactNo" />
+        </div>
+        <div class="form-group col-sm-2 blockClass">
+            <label>City </label>
+            <select   formControlName="city" class="form-control"> 
+                <option>Select</option> 
+                <option *ngFor="let web of cityList">{{web}}</option>  
+            </select>  
+        </div>
+            
+        <div class="form-group col-sm-1 blockClass">
+            <button type="button" (click)="delete(pointIndex)"><i style="color:red;" class="fa fa-trash"></i></button>
+
+        </div>
+      </div><br>
+      <div class="form-row pull-right">
+        <button type="button" (click)="addRow()">Add Row</button>
+
+      </div><br><br>
+    </div>
+    <div class="form-row pull-right">
+        <button type="button" (click)="submit()">Submit Details</button>
+
+        </div>
+
+  </form>
+  

@@ -3,21 +3,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotificationsService } from './services/notifications.service';
-import { NotificationListComponent } from './components/notification-list/notification-list.component';
-// import { NotificationsComponent } from './components/notifications/notifications.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HomeComponent } from './components/home/home.component';
+import { AddItemsComponent } from './components/add-items/add-items.component';
+import { ListItemsComponent } from './components/list-items/list-items.component';
+import { MainService } from './services/main.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ 
-    AppComponent, NotificationListComponent,
-    // NotificationsComponent
+    AppComponent, HeaderComponent, SidebarComponent, HomeComponent, AddItemsComponent, ListItemsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule
   ],
-  providers: [NotificationsService],
+  providers: [MainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

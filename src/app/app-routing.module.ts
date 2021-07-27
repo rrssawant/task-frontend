@@ -1,15 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NotificationListComponent } from './components/notification-list/notification-list.component';
+import { AddItemsComponent } from './components/add-items/add-items.component';
+import { HomeComponent } from './components/home/home.component';
+import { ListItemsComponent } from './components/list-items/list-items.component';
 
 const routes: Routes = [
   {
-    path: 'dashboard',
-    component: NotificationListComponent,
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'add',
+    component: AddItemsComponent
+  },
+  {
+    path: 'list',
+    component: ListItemsComponent
   },
   {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'home'
   }
 ];
 

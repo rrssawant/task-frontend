@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
 import { environment } from './../../environments/environment'
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class NotificationsService {
+export class MainService {
 
   constructor(private http:HttpClient) { }
   
+  listData :[];
 
-  listNotifications(){
-    return  this.http.get(environment.apiBaseUrl + '/notifications-data');
+  getCities(){
+    return  this.http.get(environment.apiBaseUrl + '/cities');
   }
 
-  updateNotifications(id){
-    return  this.http.get(environment.apiBaseUrl + '/updated-notifications-data?id='+id);
+  getData():any{
+    return  this.http.get(environment.apiBaseUrl + '/data');
+
   }
 }
